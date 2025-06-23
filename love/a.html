@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Chúc mừng sinh nhật Thiên Dy 💖</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffeef5, #ffe0ec);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 60px 20px;
+            margin: 0;
+        }
+        
+        .go-next-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            background: linear-gradient(90deg, #ffd6e0, #b8e2ff 90%);
+            color: #a745ca;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 18px #cda7e67a;
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            transition: background 0.25s, color 0.2s, transform 0.15s;
+        }
+        
+        .go-next-btn:hover {
+            background: linear-gradient(90deg, #fd93f3, #b6e2ff);
+            color: #fff;
+            transform: scale(1.07) translateY(-3px);
+        }
+        
+        .container {
+            background: #ffffff;
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 0, 100, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 36px;
+            color: #ff5f91;
+        }
+        
+        .message {
+            font-size: 18px;
+            color: #555;
+            margin-top: 30px;
+            line-height: 1.8;
+        }
+        
+        .photo-frame {
+            margin-top: 30px;
+        }
+        
+        .photo-frame img {
+            max-width: 50%;
+            height: 40%;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(255, 105, 135, 0.3);
+        }
+        
+        .countdown-box {
+            margin-top: 40px;
+            font-size: 22px;
+            color: #ff4081;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎂 Happy 23rd Birthday, Hubby 🎉</h1>
+        <p class="message">
+            Dy à,<br><br> Năm nay là sinh nhật thứ 23 của anh – một dấu mốc đẹp trong hành trình trưởng thành. Tiếc là em không thể bên anh vào ngày đặc biệt này, nhưng tình cảm thì lúc nào cũng ở đây – âm thầm, ấm áp và chân thành, như màu em chọn gửi
+            đến anh qua từng dòng này. 🤍✨<br><br> Mình yêu xa, nhưng chưa bao giờ cảm thấy cách xa. Em vẫn luôn nghe được “nhịp tim” của anh qua từng tin nhắn, từng lời động viên. Em luôn mong một ngày không xa, sinh nhật của anh sẽ là dịp tụi mình ngồi
+            cạnh nhau, cười cùng nhau, và cùng đón tuổi mới trong vòng tay nhau.<br><br> Em tin, chặng đường này không phải là tạm bợ – mà là chặng cuối cùng. Là nơi hai đứa mình chọn bước đi bên nhau, lâu dài và vững vàng – dù là những ngày nắng hay
+            mưa, mình vẫn sẽ là nhà của nhau.
+            <br><br>Cảm ơn vì anh đã đến, đã ở lại. Và cảm ơn vì đã để em được yêu anh như bây giờ.
+            <br><br>Em thương anh rất nhiều. 🤍
+        </p>
+
+        <div class="photo-frame">
+            <img src="img001.JPG" alt="Ảnh hai đứa mình 💑">
+        </div>
+
+        <div id="countdown" class="countdown-box"></div>
+
+    </div>
+    <button class="go-next-btn" id="gotoB"><i class="fa fa-arrow-right"></i>Nhấn để mở trái tim em🤍✨</button>
+    <script>
+        document.getElementById('gotoB').onclick = function() {
+            window.location.href = 'b.html';
+        };
+    </script>
+
+    <audio autoplay loop>
+      <source src="music001.mp3" type="audio/mp3">
+    </audio>
+    </div>
+
+    <script>
+        function showHeart() {
+            document.getElementById("heartbeat").style.display = "block";
+        }
+
+        const targetDate = new Date("2025-12-21T00:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "Đã đến ngày tụi mình gặp nhau rồi! 🤍";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                "⏳ Đếm ngược đến ngày tụi mình gặp nhau: " +
+                days + " ngày " + hours + " giờ " + minutes + " phút " + seconds + " giây 💞";
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>
